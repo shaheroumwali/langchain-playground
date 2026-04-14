@@ -3,17 +3,18 @@ from dotenv import load_dotenv
 
 
 class Config:
-    MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.5-flash")
+    MODEL_NAME = os.getenv("MODEL_NAME", "claude-3-5-sonnet-20241022")
     TEMPERATURE = float(os.getenv("TEMPERATURE", "0.7"))
     SYSTEM_MESSAGE = os.getenv(
         "SYSTEM_MESSAGE", "You are a helpful Python tutor who explains concepts clearly."
     )
+    MAX_TOKENS = int(os.getenv("MAX_TOKENS", "1024"))
 
 
 def load_api_key():
-    """Load and validate the GOOGLE_API_KEY from .env"""
+    """Load and validate the ANTHROPIC_API_KEY from .env"""
     load_dotenv()
-    api_key = os.getenv("GOOGLE_API_KEY")
+    api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
-        raise ValueError("GOOGLE_API_KEY not found in .env file")
+        raise ValueError("ANTHROPIC_API_KEY not found in .env file")
     return api_key
