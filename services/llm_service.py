@@ -1,4 +1,4 @@
-from langchain_anthropic import ChatAnthropic
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
@@ -7,11 +7,11 @@ from config.settings import Config, load_api_key
 
 def create_llm():
     api_key = load_api_key()
-    llm = ChatAnthropic(
+    llm = ChatGoogleGenerativeAI(
         model=Config.MODEL_NAME,
         temperature=Config.TEMPERATURE,
-        api_key=api_key,
-        max_tokens=Config.MAX_TOKENS,
+        google_api_key=api_key,
+        max_output_tokens=150,
     )
     return llm
 
