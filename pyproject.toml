@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "langchain-playground"
 version = "0.1.0"
-description = "A FastAPI-based Python tutor chatbot using Anthropic Claude LLM with LangChain and SQLite memory management"
+description = "A FastAPI-based Python tutor chatbot using Google Gemini LLM with LangChain and SQLite memory management"
 authors = ["Shah E Rome Wali <shaheroumwali@gmail.com>"]
 readme = "README.md"
 license = "MIT"
@@ -11,14 +11,14 @@ packages = [{include = "api"}, {include = "config"}, {include = "models"}, {incl
 python = "^3.10"
 fastapi = "^0.124.0"
 uvicorn = {extras = ["standard"], version = "^0.38.0"}
-langchain = "^0.3.0"
-langchain-anthropic = "^0.2.0"
-langchain-core = "^0.3.0"
+langchain = "^1.2.8"
+langchain-google-genai = "^4.2.0"
+langchain-core = "^1.2.8"
 pydantic = "^2.12.0"
 pydantic-settings = "^2.12.0"
 python-dotenv = "^1.2.1"
-anthropic = "^0.32.0"
-httpx = "^0.27.0"
+google-generativeai = "^0.8.6"
+httpx = "^0.28.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
